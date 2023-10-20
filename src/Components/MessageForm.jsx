@@ -5,6 +5,7 @@ import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
   const {chatId, creds} = props
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -12,6 +13,7 @@ const MessageForm = (props) => {
 
     if(text.length > 0){
       sendMessage(creds, chatId, {text});
+      setValue('');
     }
 
   }
